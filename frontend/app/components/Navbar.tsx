@@ -18,7 +18,7 @@ export default function Navbar() {
                         </svg>
                          </div>
                           <div className="flex flex-col">
-                            <h1 className="font-bold text-xl tracking-tight text-orange-700 leading-none">SmartTrip</h1>
+                            <h1 className="font-bold text-xl tracking-tight text-orange-700 leading-none">NusaPath</h1>
                             <span className="text-[9px] text-gray-400 font-medium tracking-wider uppercase opacity-70 mt-0.5">AI Nusantara Travel</span>
                         </div>
                       </Link>

@@ -140,7 +140,7 @@ export default function Booking() {
           <div className="lg:col-span-4 space-y-8">
             <div className="bg-orange-700 rounded-[2.5rem] p-8 text-white shadow-2xl relative overflow-hidden">
               <div className="relative z-10">
-                <h3 className="font-bold text-lg leading-tight">Sinkronkan ke Smart Trip?</h3>
+                <h3 className="font-bold text-lg leading-tight">Sinkronkan ke Nusa Path?</h3>
                 <p className="text-xs text-orange-100 mt-2 opacity-80 leading-relaxed">
                   Secara otomatis tambahkan jadwal tiket pesawat & kereta ke dalam Itinerary Planning kamu.
                 </p>
