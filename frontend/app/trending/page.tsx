@@ -14,11 +14,7 @@ export default function TrendingPage() {
   useEffect(() => {
     const fetchDestinations = async () => {
       try {
-<<<<<<< HEAD
         const res = await fetch("https://aspirate-shine-chihuahua.ngrok-free.dev/api/destinations", { cache: "no-store" });
-=======
-        const res = await fetch("http://localhost:8080/api/destinations", { cache: "no-store" });
->>>>>>> 641d9a6daa7e4189701c44f684e9fc51a0fd0d48
         if (!res.ok) throw new Error("Gagal terhubung ke Markas Golang");
         
         const data = await res.json();
