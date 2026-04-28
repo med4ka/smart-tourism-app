@@ -165,7 +165,7 @@ export default function Home() {
               <Zap className="w-4 h-4 text-orange-500" /> QUICK MENU
             </h3>
             <div className="space-y-4">
-              <Link href="/nusapath" className="w-full flex items-center justify-between p-4 bg-orange-50/50 hover:bg-orange-100 transition-colors rounded-2xl group cursor-pointer">
+              <Link href="/smartrip" className="w-full flex items-center justify-between p-4 bg-orange-50/50 hover:bg-orange-100 transition-colors rounded-2xl group cursor-pointer">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-orange-700 shadow-sm">
                     <Sparkles className="w-5 h-5" />
