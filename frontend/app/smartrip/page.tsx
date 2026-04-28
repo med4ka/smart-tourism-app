@@ -64,7 +64,6 @@ export default function SmartTrip() {
 
       <main className="max-w-4xl mx-auto px-6 pt-10">
         
-        {/* FORM INPUT AI */}
         <div className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-xl shadow-orange-100/50 mb-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div className="mb-8 text-center">
             <h2 className="text-2xl font-bold text-gray-900 tracking-tight">Atur Parameter Perjalanan</h2>
@@ -106,7 +105,6 @@ export default function SmartTrip() {
           </button>
         </div>
 
-        {/* HASIL DARI GEMINI API */}
         {itinerary && (
           <div className="space-y-6 animate-in fade-in slide-in-from-bottom-8 duration-700">
             <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 mb-6">

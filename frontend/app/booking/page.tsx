@@ -8,7 +8,6 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 
-// Data Tiket (Bisa dari Backend nanti)
 const ACTIVE_TICKETS = [
   {
     id: "#BK-99201",
@@ -181,13 +180,11 @@ export default function Booking() {
         </div>
       </main>
 
-      {/* POP-UP E-TICKET (BOARDING PASS) */}
       {selectedTicket && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
           <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" onClick={() => setSelectedTicket(null)}></div>
           
           <div className="relative w-full max-w-sm bg-white rounded-[2.5rem] shadow-2xl animate-in zoom-in duration-300 overflow-hidden">
-            {/* Header Tiket */}
             <div className="bg-orange-700 p-6 text-white flex justify-between items-center">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-widest opacity-80">E-Ticket</span>
@@ -198,7 +195,6 @@ export default function Booking() {
               </button>
             </div>
 
-            {/* Konten Tiket */}
             <div className="p-6 space-y-6">
               <div className="text-center">
                 <p className="text-xl font-black text-gray-900 tracking-tight">{selectedTicket.route.split('→')[0].trim()}</p>
@@ -240,7 +236,6 @@ export default function Booking() {
               </div>
             </div>
 
-            {/* Aksi Tiket */}
             <div className="grid grid-cols-2 border-t border-gray-100">
               <button onClick={handleDownload} className="p-4 flex items-center justify-center gap-2 text-xs font-bold text-gray-600 hover:bg-gray-50 transition-colors border-r border-gray-100">
                 <Download className="w-4 h-4" /> Download PDF

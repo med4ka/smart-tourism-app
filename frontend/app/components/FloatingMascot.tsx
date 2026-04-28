@@ -11,9 +11,8 @@ export default function FloatingMascot() {
   const handleSend = () => {
     if (message.trim() === "") return;
     toast.success("Gari sedang mencari jawaban untukmu...");
-    setMessage(""); // Reset input
+    setMessage(""); 
     
-    // Ilusi AI merespon
     setTimeout(() => {
       toast.info("Gari: Fitur Chat AI masih dalam pengembangan untuk babak final!");
     }, 2000);
@@ -22,7 +21,6 @@ export default function FloatingMascot() {
   return (
     <div className="fixed bottom-24 md:bottom-10 right-4 md:right-8 z-[90] flex flex-col items-end">
       
-      {/* Kotak Obrolan Gari */}
       {isOpen && (
         <div className="bg-white w-[280px] md:w-80 rounded-[2rem] rounded-br-none shadow-2xl border border-orange-100 mb-4 animate-in slide-in-from-bottom-4 zoom-in duration-300 overflow-hidden">
           
@@ -68,7 +66,6 @@ export default function FloatingMascot() {
         </div>
       )}
 
-      {/* Tombol Melayang Garuda */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-tr from-orange-700 to-orange-500 text-white rounded-full flex items-center justify-center shadow-xl shadow-orange-700/30 hover:scale-110 active:scale-95 transition-all relative border-2 border-white"

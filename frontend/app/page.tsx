@@ -25,7 +25,6 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [greeting, setGreeting] = useState("Halo");
 
-  // Logic Sapaan Dinamis
   useEffect(() => {
     const hour = new Date().getHours();
     if (hour >= 5 && hour < 12) setGreeting("Selamat Pagi");
@@ -48,11 +47,9 @@ export default function Home() {
   return (
     <main className="max-w-7xl mx-auto w-full pt-8 pb-24 md:pb-12 px-4 md:px-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
       
-      {/* SAPAAN DINAMIS & LOKASI + LOGO BARU */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
         <div className="flex items-center gap-6">
             
-          {/* LOGO SMARTTRIP */}
           <div className="w-16 h-16 bg-white border border-gray-100 rounded-2xl flex items-center justify-center p-2 shadow-inner shrink-0">
              <div className="w-12 h-12 bg-orange-700 rounded-xl flex items-center justify-center text-white shadow-lg shadow-orange-200">
                 <Plane className="w-6 h-6" />
@@ -92,10 +89,8 @@ export default function Home() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-8 space-y-10">
           
-          {/* BANNER ITINERARY AI */}
           <section className="relative w-full overflow-hidden rounded-[2.5rem] shadow-2xl shadow-orange-100/50 group cursor-pointer" onClick={() => router.push('/smartrip')}>
             <div className="relative w-full min-h-[400px] md:aspect-[21/8] md:min-h-0 bg-orange-800 flex flex-col overflow-hidden">
-              {/* GAMBAR BANNER LOKAL */}
               <img 
                 src="/wisata-indah.png" 
                 className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
@@ -118,7 +113,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* TRENDING BANGET */}
           <section className="mt-12 px-6 md:px-10">
             <div className="flex justify-between items-end mb-8">
               <div>
@@ -131,10 +125,8 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-              {/* CARD BOROBUDUR */}
               <div className="group bg-white p-3 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-orange-100/50 transition-all duration-500 cursor-pointer" onClick={() => router.push('/trending')}>
                 <div className="h-52 rounded-[2rem] overflow-hidden relative">
-                  {/* GAMBAR BOROBUDUR LOKAL */}
                   <img src="/borobur.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Candi" />
                   <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full text-white">
                     <Heart className="w-4 h-4" />
@@ -150,10 +142,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* CARD ULUWATU */}
               <div className="group bg-white p-3 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-orange-100/50 transition-all duration-500 cursor-pointer" onClick={() => router.push('/trending')}>
                 <div className="h-52 rounded-[2rem] overflow-hidden relative">
-                  {/* GAMBAR ULUWATU LOKAL BARU */}
                   <img src="/uluwatu-temple.png" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Uluwatu" />
                 </div>
                 <div className="p-5">
@@ -169,7 +159,6 @@ export default function Home() {
           </section>
         </div>
 
-        {/* KOLOM KANAN (Quick Menu dll) */}
         <div className="lg:col-span-4 space-y-8">
           <div className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm">
             <h3 className="font-bold text-sm text-gray-800 mb-6 flex items-center gap-2">

@@ -6,7 +6,6 @@ import {
   ArrowLeft, 
   ShoppingBag, 
   Star, 
-  Store, 
   Heart, 
   Filter,
   Sparkles,
@@ -22,7 +21,7 @@ const PRODUCTS = [
     price: "Rp 125.000",
     rating: 4.8,
     store: "Mekar Jaya",
-    image: "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//catalog-image/98/MTA-103743295/no-brand_souvenir-stupa-patung-budha-kuningan-brass-antik-candi-borobudur-jogja_full01.jpg"
+    image: "/borobudur-mini.png"
   },
   {
     id: 2,
@@ -31,7 +30,7 @@ const PRODUCTS = [
     price: "Rp 350.000",
     rating: 4.9,
     store: "Batik Solo Center",
-    image: "https://thebatik.co.id/wp-content/uploads/2016/11/thebatikcoid-warna-alam-sido-asih-ii-349x465.jpg"
+    image: "/batik_indigo.png"
   },
   {
     id: 3,
@@ -40,7 +39,7 @@ const PRODUCTS = [
     price: "Rp 150.000",
     rating: 4.7,
     store: "Java Coffee",
-    image: "https://images.squarespace-cdn.com/content/v1/588551611b631b4396755e60/1547912018568-NL5A27IGMJGF4OHZJFRZ/Kaya+Kopi+w+certificates-min.jpg?format=1000w"
+    image: "/kopi_luwak.png"
   }
 ];
 

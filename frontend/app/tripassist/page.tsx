@@ -32,10 +32,8 @@ export default function TripAssist() {
       <main className="max-w-4xl mx-auto px-6 pt-10">
         <div className="flex flex-col md:flex-row gap-8">
           
-          {/* Kolom Kiri: SOS & Info Utama */}
           <div className="w-full md:w-1/3 space-y-6">
             
-            {/* Tombol SOS */}
             <div className="bg-white p-6 rounded-[2.5rem] border border-red-100 shadow-xl shadow-red-100/50 text-center animate-in zoom-in duration-500">
               <h2 className="text-sm font-bold text-gray-800 mb-2">Emergency Hub</h2>
               <p className="text-[10px] text-gray-400 mb-6">Tekan & tahan untuk bantuan darurat</p>
@@ -55,7 +53,6 @@ export default function TripAssist() {
               </div>
             </div>
 
-            {/* Kontak Darurat Lokal */}
             <div className="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm space-y-4 animate-in slide-in-from-left-4 duration-500 delay-150">
               <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Kontak Darurat (Magelang)</h3>
               
@@ -81,7 +78,6 @@ export default function TripAssist() {
             </div>
           </div>
 
-          {/* Kolom Kanan: Real-time Monitoring */}
           <div className="w-full md:w-2/3 space-y-6 animate-in slide-in-from-bottom-8 duration-700">
             
             <div className="bg-gray-900 text-white p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
@@ -115,7 +111,6 @@ export default function TripAssist() {
                 </div>
               </div>
 
-              {/* Kepadatan */}
               <div className="bg-white p-6 rounded-[2rem] border border-orange-100 shadow-sm">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="font-bold text-gray-800 flex items-center gap-2">

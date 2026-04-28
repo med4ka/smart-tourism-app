@@ -11,22 +11,18 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-lg border-b border-gray-100 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex justify-between items-center h-20">
-          
-            {/* --- LOGO SVG MURNI (ANTI-BROKEN) --- */}
-                      <Link href="/" className="flex items-center gap-3 group">
-                        <div className="w-11 h-11 rounded-[0.8rem] bg-gradient-to-br from-orange-600 to-yellow-500 flex items-center justify-center shadow-lg shadow-orange-200 transition-transform group-hover:scale-105 group-hover:rotate-3">
-                          <svg viewBox="0 0 100 100" className="w-6 h-6 transform -rotate-12 translate-x-0.5">
-                            <path d="M10 90 L90 50 L10 10 L30 50 Z" fill="white" stroke="white" strokeWidth="5" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <div className="flex flex-col">
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="w-11 h-11 rounded-[0.8rem] bg-gradient-to-br from-orange-600 to-yellow-500 flex items-center justify-center shadow-lg shadow-orange-200 transition-transform group-hover:scale-105 group-hover:rotate-3">
+                  <svg viewBox="0 0 100 100" className="w-6 h-6 transform -rotate-12 translate-x-0.5">
+                      <path d="M10 90 L90 50 L10 10 L30 50 Z" fill="white" stroke="white" strokeWidth="5" strokeLinejoin="round" />
+                        </svg>
+                         </div>
+                          <div className="flex flex-col">
                             <h1 className="font-bold text-xl tracking-tight text-orange-700 leading-none">SmartTrip</h1>
                             <span className="text-[9px] text-gray-400 font-medium tracking-wider uppercase opacity-70 mt-0.5">AI Nusantara Travel</span>
                         </div>
                       </Link>
-                      {/* ---------------------------------- */}
 
-          {/* MENU TENGAH (DESKTOP) */}
           <div className="hidden md:flex items-center gap-1">
             <Link 
               href="/" 
@@ -48,7 +44,6 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* PROFIL KANAN ATAS */}
           <div className="flex items-center gap-3">
             <div className="hidden sm:flex flex-col text-right">
                 <span className="text-[10px] text-gray-400 leading-none">Welcome back,</span>

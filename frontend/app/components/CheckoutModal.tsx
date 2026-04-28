@@ -20,7 +20,6 @@ export default function CheckoutModal({
   if (!isOpen || !product) return null;
 
   const handleClose = () => {
-    // Reset state kalau modal ditutup
     setTimeout(() => setSuccessData(null), 300);
     onClose();
   };
@@ -30,15 +29,12 @@ export default function CheckoutModal({
     toast.loading("Memproses pembayaran...");
 
     try {
-      // Ubah string "Rp 150.000" jadi angka 150000 buat dikirim ke Golang
       const priceNumber = parseInt(product.price.replace(/[^0-9]/g, '')) || 150000;
-
-      // Tembak API Backend Golang lu
       const res = await fetch("http://localhost:8080/api/booking", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          user_name: "Tulalit Jendral", // Nama user lu
+          user_name: "Tulalit Jendral", 
           destination_id: product.id || 1,
           amount_paid: priceNumber
         }),
@@ -50,8 +46,6 @@ export default function CheckoutModal({
       
       toast.dismiss();
       toast.success("Transaksi berhasil dicatat ke IPFS!");
-      
-      // Simpan data (termasuk ticket_hash) buat ditampilin di struk
       setSuccessData(data);
 
     } catch (err) {
@@ -68,8 +62,6 @@ export default function CheckoutModal({
       <div className="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" onClick={handleClose}></div>
       
       <div className="relative w-full max-w-md bg-white rounded-[2.5rem] p-6 shadow-2xl animate-in slide-in-from-bottom-10 md:zoom-in duration-300 overflow-hidden">
-        
-        {/* JIKA PEMBAYARAN SUKSES (STRUK WEB3) */}
         {successData ? (
           <div className="text-center py-6 animate-in fade-in slide-in-from-right-8 duration-500">
             <div className="w-20 h-20 bg-green-50 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
@@ -123,7 +115,6 @@ export default function CheckoutModal({
           </div>
         ) : (
           
-          /* JIKA BELUM BAYAR (FORM KASIR) */
           <div className="animate-in fade-in slide-in-from-left-8 duration-500">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2">

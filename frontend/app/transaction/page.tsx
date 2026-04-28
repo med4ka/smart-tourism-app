@@ -6,7 +6,7 @@ import {
   ArrowLeft, Truck, Hotel, Ticket, Plane, Train, BusFront, Ship, 
   Palmtree, Building, Home, Star, Calendar, Users, CheckCircle
 } from "lucide-react";
-import CheckoutModal from "../components/CheckoutModal"; // Kita pake kasir yg udah lu buat!
+import CheckoutModal from "../components/CheckoutModal"; 
 
 export default function Transaction() {
   const [activeTab, setActiveTab] = useState("new-booking");
@@ -14,7 +14,6 @@ export default function Transaction() {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
 
   const openCheckout = () => {
-    // Simulasi milih tiket
     setSelectedProduct({
       name: "Tiket Pesawat (x2) & Pajak",
       store: "Garuda Indonesia",
@@ -46,7 +45,6 @@ export default function Transaction() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
               <div className="lg:col-span-8 space-y-8">
                 
-                {/* Menu Transport, Stay, Ticket */}
                 <div className="flex gap-4 overflow-x-auto no-scrollbar pb-2">
                   <button onClick={() => setSelectedService('transport')} className={`shrink-0 flex flex-col items-center gap-3 p-6 rounded-[2rem] min-w-[120px] transition-all ${selectedService === 'transport' ? 'bg-orange-700 text-white shadow-xl' : 'bg-white border border-gray-100 text-gray-400 hover:border-orange-200'}`}>
                     <Truck className="w-6 h-6" />
@@ -62,7 +60,6 @@ export default function Transaction() {
                   </button>
                 </div>
 
-                {/* Dynamic Sub Menu */}
                 {selectedService === 'transport' && (
                   <div className="animate-in fade-in duration-300 space-y-4">
                     <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest px-2">Pilih Moda Transportasi</label>
@@ -123,7 +120,6 @@ export default function Transaction() {
                   </div>
                 )}
 
-                {/* Popular Places */}
                 <div className="mt-10 space-y-4">
                   <div className="flex justify-between items-end px-2">
                     <h4 className="text-sm font-bold text-gray-800">Populer di Sekitar Borobudur</h4>
@@ -161,7 +157,6 @@ export default function Transaction() {
                   </div>
                 </div>
 
-                {/* Forms */}
                 <div className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-3">
@@ -191,7 +186,6 @@ export default function Transaction() {
 
               </div>
 
-              {/* Price Summary */}
               <div className="lg:col-span-4 space-y-6">
                 <div className="bg-gray-900 rounded-[2.5rem] p-8 text-white shadow-2xl sticky top-28">
                   <h4 className="text-xs font-bold opacity-40 uppercase tracking-widest mb-6">Price Summary</h4>
@@ -225,7 +219,6 @@ export default function Transaction() {
           </section>
         )}
 
-        {/* History Tab */}
         {activeTab === 'history' && (
           <section className="animate-in fade-in slide-in-from-bottom-4 duration-500">
              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -245,7 +238,6 @@ export default function Transaction() {
         )}
       </main>
 
-      {/* Pop-up Modal Kasir */}
       <CheckoutModal 
         isOpen={!!selectedProduct} 
         onClose={() => setSelectedProduct(null)} 

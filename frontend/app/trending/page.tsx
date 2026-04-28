@@ -11,16 +11,13 @@ export default function TrendingPage() {
   const [places, setPlaces] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // NARIK DATA DARI GOLANG (DATABASE SUPABASE)
   useEffect(() => {
     const fetchDestinations = async () => {
       try {
-        // Panggil API Golang dengan anti-cache
         const res = await fetch("http://localhost:8080/api/destinations", { cache: "no-store" });
         if (!res.ok) throw new Error("Gagal terhubung ke Markas Golang");
         
         const data = await res.json();
-        
         const formattedData = data.map((item: any) => ({
           id: item.id,
           name: item.name,
@@ -28,7 +25,7 @@ export default function TrendingPage() {
           price: `Rp ${item.price.toLocaleString('id-ID')}`,
           store: "Nusantara, Indonesia",
           rating: item.rating,
-          image: item.image_url // Ini bakal ngebaca "/borobur.png" dll
+          image: item.image_url 
         }));
 
         setPlaces(formattedData);
@@ -76,7 +73,6 @@ export default function TrendingPage() {
                 className="group bg-white p-3 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer flex flex-col"
               >
                 <div className="h-52 rounded-[2rem] overflow-hidden relative mb-4">
-                  {/* GAMBAR AKAN MUNCUL DI SINI */}
                   <img src={place.image} alt={place.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-md p-2 rounded-full text-red-500 shadow-sm">
                     <Heart className="w-4 h-4" />

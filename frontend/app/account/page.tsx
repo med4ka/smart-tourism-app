@@ -11,8 +11,6 @@ import {
 
 export default function Account() {
   const router = useRouter();
-  
-  // State biar Toggle Button-nya interaktif bisa dipencet
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isNotifOn, setIsNotifOn] = useState(true);
 
@@ -27,8 +25,6 @@ export default function Account() {
 
   return (
     <div className="bg-gray-50 min-h-screen pb-24">
-      
-      {/* HEADER ATAS */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors">
@@ -41,13 +37,8 @@ export default function Account() {
 
       <main className="max-w-6xl mx-auto px-6 pt-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          
-          {/* =========================================
-              KOLOM KIRI (PROFILE & APP SETTINGS)
-          ========================================= */}
           <div className="lg:col-span-4 space-y-6">
             
-            {/* Profile Card Identik dengan account.html */}
             <div className="bg-white p-8 rounded-[3rem] border border-gray-100 shadow-sm text-center relative overflow-hidden">
               <div className="absolute -top-10 -left-10 w-32 h-32 bg-orange-100/50 rounded-full blur-3xl"></div>
               
@@ -74,7 +65,6 @@ export default function Account() {
               </div>
             </div>
 
-            {/* App Settings Identik dengan account.html */}
             <div className="bg-gray-900 rounded-[2.5rem] p-8 text-white shadow-xl">
               <h4 className="text-xs font-bold opacity-50 uppercase tracking-widest mb-6">App Settings</h4>
               <div className="space-y-5">
@@ -101,15 +91,9 @@ export default function Account() {
 
               </div>
             </div>
-
           </div>
 
-          {/* =========================================
-              KOLOM KANAN (ACCOUNT SETTINGS & LAINNYA)
-          ========================================= */}
           <div className="lg:col-span-8 space-y-10">
-            
-            {/* Pengaturan Akun */}
             <div>
               <h3 className="text-xl font-bold text-gray-800 mb-6">Pengaturan Akun</h3>
               <div className="grid gap-4">
@@ -154,7 +138,6 @@ export default function Account() {
               </div>
             </div>
 
-            {/* Lainnya */}
             <div>
               <h3 className="text-xl font-bold text-gray-800 mb-6">Lainnya</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -163,7 +146,6 @@ export default function Account() {
                   <span className="text-sm font-bold text-gray-600">Bahasa (Indonesia)</span>
                 </button>
                 
-                {/* Tombol Logout beneran jalan! */}
                 <button 
                   onClick={handleLogout}
                   className="flex items-center gap-4 p-5 bg-gray-50 rounded-3xl hover:bg-red-50 border border-transparent hover:border-red-100 transition-all text-red-600 group"
