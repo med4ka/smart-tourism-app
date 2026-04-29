@@ -9,7 +9,7 @@ import { Toaster } from "sonner";
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SmartTrip",
+  title: "NusaPath",
   description: "Travel smarter, not harder",
 };
 
