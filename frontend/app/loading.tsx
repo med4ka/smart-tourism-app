@@ -11,7 +11,7 @@ export default function Loading() {
         
         <div className="space-y-2 text-center">
           <p className="text-sm font-bold text-gray-800 animate-pulse uppercase tracking-widest">Memproses Data...</p>
-          <p className="text-[10px] text-gray-400 font-medium italic">SmartTrip sedang menyiapkan rute terbaik untukmu</p>
+          <p className="text-[10px] text-gray-400 font-medium italic">NusaPath sedang menyiapkan rute terbaik untukmu</p>
         </div>
 
         <div className="mt-8 grid grid-cols-2 gap-4 w-64 opacity-20">
