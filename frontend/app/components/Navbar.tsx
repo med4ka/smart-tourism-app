@@ -50,7 +50,7 @@ export default function Navbar() {
                 <span className="text-xs font-bold">Tulalit</span>
             </div>
             <Link href="/account" className="w-10 h-10 rounded-full border-2 border-orange-100 p-0.5 shadow-sm overflow-hidden hover:scale-105 transition-transform">
-              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Gipari" alt="avatar" className="w-full h-full rounded-full bg-orange-50" />
+              <img src="/profile.jpg" className="w-full h-full rounded-full border-4 border-white shadow-xl object-cover" alt="Avatar" />
             </Link>
           </div>
 

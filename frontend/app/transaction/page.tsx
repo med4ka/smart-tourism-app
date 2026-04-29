@@ -11,14 +11,15 @@ import CheckoutModal from "../components/CheckoutModal";
 export default function Transaction() {
   const [activeTab, setActiveTab] = useState("new-booking");
   const [selectedService, setSelectedService] = useState("transport");
+  const [transportMode, setTransportMode] = useState("Pesawat"); // State baru untuk pilihan kendaraan
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
 
   const openCheckout = () => {
     setSelectedProduct({
-      name: "Tiket Pesawat (x2) & Pajak",
-      store: "Garuda Indonesia",
+      name: `Tiket ${transportMode} (x2) & Pajak`,
+      store: "NusaPath Official",
       price: "Rp 1.950.000",
-      image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=200"
+      image: "/plataran-boro.jpg" 
     });
   };
 
@@ -64,22 +65,26 @@ export default function Transaction() {
                   <div className="animate-in fade-in duration-300 space-y-4">
                     <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest px-2">Pilih Moda Transportasi</label>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      <button className="flex items-center gap-3 p-4 bg-white border-2 border-orange-700 rounded-2xl group">
-                        <div className="w-8 h-8 bg-orange-50 text-orange-700 rounded-lg flex items-center justify-center"><Plane className="w-4 h-4" /></div>
-                        <span className="text-xs font-bold text-orange-700">Pesawat</span>
+                      <button onClick={() => setTransportMode('Pesawat')} className={`flex items-center gap-3 p-4 rounded-2xl group transition-all ${transportMode === 'Pesawat' ? 'bg-white border-2 border-orange-700 shadow-md' : 'bg-white border border-gray-100 hover:border-orange-200'}`}>
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${transportMode === 'Pesawat' ? 'bg-orange-50 text-orange-700' : 'bg-gray-50 text-gray-400 group-hover:text-orange-700'}`}><Plane className="w-4 h-4" /></div>
+                        <span className={`text-xs font-bold transition-colors ${transportMode === 'Pesawat' ? 'text-orange-700' : 'text-gray-500 group-hover:text-orange-700'}`}>Pesawat</span>
                       </button>
-                      <button className="flex items-center gap-3 p-4 bg-white border border-gray-100 rounded-2xl group hover:border-orange-200">
-                        <div className="w-8 h-8 bg-gray-50 text-gray-400 rounded-lg flex items-center justify-center group-hover:text-orange-700"><Train className="w-4 h-4" /></div>
-                        <span className="text-xs font-bold text-gray-500 group-hover:text-orange-700">Kereta Api</span>
+
+                      <button onClick={() => setTransportMode('Kereta Api')} className={`flex items-center gap-3 p-4 rounded-2xl group transition-all ${transportMode === 'Kereta Api' ? 'bg-white border-2 border-orange-700 shadow-md' : 'bg-white border border-gray-100 hover:border-orange-200'}`}>
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${transportMode === 'Kereta Api' ? 'bg-orange-50 text-orange-700' : 'bg-gray-50 text-gray-400 group-hover:text-orange-700'}`}><Train className="w-4 h-4" /></div>
+                        <span className={`text-xs font-bold transition-colors ${transportMode === 'Kereta Api' ? 'text-orange-700' : 'text-gray-500 group-hover:text-orange-700'}`}>Kereta Api</span>
                       </button>
-                      <button className="flex items-center gap-3 p-4 bg-white border border-gray-100 rounded-2xl group hover:border-orange-200">
-                        <div className="w-8 h-8 bg-gray-50 text-gray-400 rounded-lg flex items-center justify-center group-hover:text-orange-700"><BusFront className="w-4 h-4" /></div>
-                        <span className="text-xs font-bold text-gray-500 group-hover:text-orange-700">Bus</span>
+
+                      <button onClick={() => setTransportMode('Bus')} className={`flex items-center gap-3 p-4 rounded-2xl group transition-all ${transportMode === 'Bus' ? 'bg-white border-2 border-orange-700 shadow-md' : 'bg-white border border-gray-100 hover:border-orange-200'}`}>
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${transportMode === 'Bus' ? 'bg-orange-50 text-orange-700' : 'bg-gray-50 text-gray-400 group-hover:text-orange-700'}`}><BusFront className="w-4 h-4" /></div>
+                        <span className={`text-xs font-bold transition-colors ${transportMode === 'Bus' ? 'text-orange-700' : 'text-gray-500 group-hover:text-orange-700'}`}>Bus</span>
                       </button>
-                      <button className="flex items-center gap-3 p-4 bg-white border border-gray-100 rounded-2xl group hover:border-orange-200">
-                        <div className="w-8 h-8 bg-gray-50 text-gray-400 rounded-lg flex items-center justify-center group-hover:text-orange-700"><Ship className="w-4 h-4" /></div>
-                        <span className="text-xs font-bold text-gray-500 group-hover:text-orange-700">Kapal Laut</span>
+
+                      <button onClick={() => setTransportMode('Kapal Laut')} className={`flex items-center gap-3 p-4 rounded-2xl group transition-all ${transportMode === 'Kapal Laut' ? 'bg-white border-2 border-orange-700 shadow-md' : 'bg-white border border-gray-100 hover:border-orange-200'}`}>
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${transportMode === 'Kapal Laut' ? 'bg-orange-50 text-orange-700' : 'bg-gray-50 text-gray-400 group-hover:text-orange-700'}`}><Ship className="w-4 h-4" /></div>
+                        <span className={`text-xs font-bold transition-colors ${transportMode === 'Kapal Laut' ? 'text-orange-700' : 'text-gray-500 group-hover:text-orange-700'}`}>Kapal Laut</span>
                       </button>
+
                     </div>
                   </div>
                 )}
@@ -128,7 +133,7 @@ export default function Transaction() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="flex gap-4 p-4 bg-white border border-gray-100 rounded-[2rem] shadow-sm hover:shadow-md transition-shadow cursor-pointer">
                       <div className="w-24 h-24 rounded-2xl overflow-hidden bg-gray-100 shrink-0">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200" className="w-full h-full object-cover" />
+                        <img src="/plataran-boro.jpg" className="w-full h-full object-cover" alt="Plataran Borobudur" />
                       </div>
                       <div className="flex flex-col justify-center">
                         <div className="flex items-center gap-1 mb-1">
@@ -142,7 +147,7 @@ export default function Transaction() {
                     </div>
                     <div className="flex gap-4 p-4 bg-white border border-gray-100 rounded-[2rem] shadow-sm hover:shadow-md transition-shadow cursor-pointer">
                       <div className="w-24 h-24 rounded-2xl overflow-hidden bg-gray-100 shrink-0">
-                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=200" className="w-full h-full object-cover" />
+                        <img src="/saras-hotel.jpg" className="w-full h-full object-cover" alt="Saraswati Hotel" />
                       </div>
                       <div className="flex flex-col justify-center">
                         <div className="flex items-center gap-1 mb-1">
@@ -191,7 +196,7 @@ export default function Transaction() {
                   <h4 className="text-xs font-bold opacity-40 uppercase tracking-widest mb-6">Price Summary</h4>
                   <div className="space-y-4">
                     <div className="flex justify-between text-sm">
-                      <span className="opacity-60">Tiket Pesawat (x2)</span>
+                      <span className="opacity-60">Tiket {transportMode} (x2)</span>
                       <span className="font-bold">Rp 1.800.000</span>
                     </div>
                     <div className="flex justify-between text-sm">
@@ -221,7 +226,7 @@ export default function Transaction() {
 
         {activeTab === 'history' && (
           <section className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-white p-6 rounded-[2.5rem] border border-gray-100 shadow-sm flex items-center justify-between group">
                     <div className="flex items-center gap-5">
                         <div className="w-14 h-14 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center shadow-inner">
