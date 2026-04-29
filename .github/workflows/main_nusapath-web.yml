@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: .
+          path: frontend/.next/
 
   deploy:
     runs-on: ubuntu-latest
@@ -63,4 +63,3 @@ jobs:
           app-name: 'NusaPath-Web'
           slot-name: 'Production'
           package: .
-          
